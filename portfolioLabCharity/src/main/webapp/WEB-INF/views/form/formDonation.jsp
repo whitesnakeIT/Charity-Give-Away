@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<jsp:include page="fragments/headers/formHeader.jsp"/>
+<jsp:include page="../fragments/headers/formHeader.jsp"/>
 <section class="form--steps" id="steps">
     <div class="form--steps-instructions">
 
@@ -220,4 +220,4 @@
         </form:form>
     </div>
 
-<jsp:include page="fragments/footer.jsp"/>
+<jsp:include page="../fragments/footer.jsp"/>

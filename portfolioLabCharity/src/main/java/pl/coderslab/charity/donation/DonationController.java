@@ -25,17 +25,18 @@ public class DonationController {
     private final DonationService donationService;
 
     @GetMapping("/form")
-    public String showFormGet(Model model){
+    public String showFormGet(Model model) {
         model.addAttribute(new Donation());
-        return "formExample";
+        return "form/formDonation";
     }
+
     @PostMapping("/form")
-    public String showFormPost(@Valid Donation donation, BindingResult result){
+    public String showFormPost(@Valid Donation donation, BindingResult result) {
         if (result.hasErrors()) {
-            return "formExample";
+            return "form/formDonation";
         }
         donationService.create(donation);
-        return "formConfirmation";
+        return "form/formConfirmation";
     }
 
 

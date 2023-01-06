@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="fragments/headers/formHeader.jsp"/>
+<jsp:include page="../fragments/headers/formHeader.jsp"/>
     <title>Donation Confirmation</title>
 </header>
     <div class="slogan container container--90">
@@ -9,4 +9,4 @@
         </h2>
     </div>
 
-<jsp:include page="fragments/footer.jsp"/>
+<jsp:include page="../fragments/footer.jsp"/>
