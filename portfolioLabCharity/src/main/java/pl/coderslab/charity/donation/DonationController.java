@@ -12,6 +12,7 @@ import pl.coderslab.charity.category.CategoryService;
 import pl.coderslab.charity.institution.Institution;
 import pl.coderslab.charity.institution.InstitutionService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -29,7 +30,7 @@ public class DonationController {
         return "formExample";
     }
     @PostMapping("/form")
-    public String showFormPost(Donation donation, BindingResult result){
+    public String showFormPost(@Valid Donation donation, BindingResult result){
         if (result.hasErrors()) {
             return "formExample";
         }

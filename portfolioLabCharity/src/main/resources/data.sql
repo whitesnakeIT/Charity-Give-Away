@@ -9,3 +9,4 @@ INSERT INTO categories (id, name) VALUE (null, 'ubrania, które nadają się do 
 INSERT INTO categories (id, name) VALUE (null, 'ubrania, do wyrzucenia');
 INSERT INTO categories (id, name) VALUE (null, 'zabawki');
 INSERT INTO categories (id, name) VALUE (null, 'książki');
+INSERT INTO categories (id, name) VALUE (null, 'inne');

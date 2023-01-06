@@ -27,6 +27,8 @@
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
         <form:form method="post" modelAttribute="donation">
+
+
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active" id="step1">
                 <h3>Zaznacz co chcesz oddać:</h3>
@@ -39,17 +41,11 @@
                         </label>
                     </div>
                 </c:forEach>
-                <div class="form-group form-group--checkbox">
-                    <label>
-                        <input type="checkbox" id="categories0" name="categories" value="0"/>
-                        <span class="checkbox"></span>
-                        <span class="description">Inne</span>
-                    </label>
-                </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
+                <h4><form:errors path="categories" cssClass="error"/></h4>
             </div>
 
             <!-- STEP 2 -->
@@ -61,12 +57,14 @@
                         Liczba 60l worków:
                         <form:input path="quantity" type="number" step="1" min="1"/>
                     </label>
+
                 </div>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
+                <h4><form:errors path="quantity" cssClass="error"/></h4>
             </div>
 
 
@@ -91,7 +89,10 @@
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="button" class="btn next-step">Dalej</button>
+
                 </div>
+                <h4><form:errors path="institution" cssClass="error"/></h4>
+
             </div>
 
             <!-- STEP 5 -->
@@ -102,34 +103,54 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input path="street"/> </label>
+                            <label>
+                                Ulica
+                                <form:input path="street"/>
+                            </label>
                         </div>
+                        <h4><form:errors path="street" cssClass="error-summary"/></h4>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <form:input path="city"/> </label>
+                            <label>
+                                Miasto
+                                <form:input path="city"/>
+                            </label>
+                            <h4><form:errors path="city" cssClass="error-summary"/></h4>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <form:input path="zipCode"/>
+                                Kod pocztowy
+                                <form:input path="zipCode"/>
                             </label>
+                            <h4><form:errors path="zipCode" cssClass="error-summary"/></h4>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="text" id="phone" name="phone"/>
+                                Numer telefonu
+                                <form:input path="phone" type="number"/>
                             </label>
+                            <h4><form:errors path="phone" cssClass="error-summary"/></h4>
                         </div>
                     </div>
 
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <form:input path="pickUpDate" type="date"/> </label>
+                            <label>
+                                Data
+                                <form:input path="pickUpDate" type="date"/>
+                            </label>
+                            <h4><form:errors path="pickUpDate" cssClass="error-summary"/></h4>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <form:input path="pickUpTime" type="time"/> </label>
+                            <label>
+                                Godzina
+                                <form:input path="pickUpTime" type="time"/>
+                            </label>
+                            <h4><form:errors path="pickUpTime" cssClass="error-summary"/></h4>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -137,6 +158,7 @@
                                 Uwagi dla kuriera
                                 <form:textarea path="pickUpComment" rows="5"/>
                             </label>
+                            <h4><form:errors path="pickUpComment" cssClass="error-summary"/></h4>
                         </div>
                     </div>
                 </div>
