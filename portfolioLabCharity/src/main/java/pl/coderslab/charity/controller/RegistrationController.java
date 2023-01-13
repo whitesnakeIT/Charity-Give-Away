@@ -35,8 +35,7 @@ public class RegistrationController {
             model.addAttribute("passwordsNotMatch",true);
             return "account/register";
         }
-        System.out.println(password2);
-        userService.create(user);
+    userService.create(user);
 
         return "redirect:/?msg=creating-success";
 

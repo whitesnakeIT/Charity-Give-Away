@@ -15,6 +15,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Stream;
 
 @Entity
 @Getter
@@ -38,16 +39,27 @@ public class User {
 
     @NotEmpty
     @NotBlank
-    @Size(min = 2,max = 15)
+    @Size(min = 2,max = 70)
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    private boolean enabled;
+
+    @ManyToMany//(cascade = CascadeType.ALL)
     @ToString.Exclude
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+
+
+    public boolean hasRole(String roleName){
+        return getRoles()
+                .stream()
+                .anyMatch(role -> role.getName().equals(roleName));
+
+
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

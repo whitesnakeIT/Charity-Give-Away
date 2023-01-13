@@ -14,12 +14,9 @@ INSERT INTO categories (id, name) VALUE (null, 'inne');
 INSERT INTO roles (id, name) VALUE (null, 'ROLE_ADMIN');
 INSERT INTO roles (id, name) VALUE (null, 'ROLE_USER');
 
-INSERT INTO users (email, password, username) VALUE ('1@1o2.pl','$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm
-','1');
-INSERT INTO users (email, password, username) VALUE ('11@1o2.pl','$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm
-','11');
-INSERT INTO users (email, password, username) VALUE ('111@1o2.pl', '$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm
-', '111');
+INSERT INTO users (id, email, password, username, enabled) VALUE (1, '1@1o2.pl','$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm','1', true);
+INSERT INTO users (id, email, password, username, enabled) VALUE (2, '11@1o2.pl','$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm','11', true);
+INSERT INTO users (id, email, password, username, enabled) VALUE (3, '111@1o2.pl', '$2a$12$qRXaPiHLVtYc1XJFAhmxQOcHT8JcteKtij9R.ncaZu7tHX1eCBKNm', '111', true);
 
 INSERT INTO user_role(user_id, role_id) VALUE (1,1);
 INSERT INTO user_role(user_id, role_id) VALUE (2,2);

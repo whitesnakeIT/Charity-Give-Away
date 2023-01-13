@@ -21,6 +21,9 @@ public class LoggedUserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userService.findByEmail(email);
+        if (!user.isEnabled()) {
+            throw new RuntimeException("User has blocked account, please contact support");
+        }
         Set<SimpleGrantedAuthority> simpleGrantedAuthorities = user
                 .getRoles()
                 .stream()

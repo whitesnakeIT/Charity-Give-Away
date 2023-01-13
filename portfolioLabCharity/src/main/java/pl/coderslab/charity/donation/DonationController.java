@@ -33,6 +33,7 @@ public class DonationController {
     @PostMapping("/form")
     public String showFormPost(@Valid Donation donation, BindingResult result) {
         if (result.hasErrors()) {
+            System.out.println(donation);
             return "form/formDonation";
         }
         donationService.create(donation);
