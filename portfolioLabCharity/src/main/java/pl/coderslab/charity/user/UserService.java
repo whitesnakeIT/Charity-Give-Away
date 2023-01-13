@@ -70,6 +70,7 @@ public class UserService { //implements UserDetailsService {
         if (userToEdit.getRoles() == null) {
             User userFromDB = findById(userToEdit.getId());
             userToEdit.setRoles(userFromDB.getRoles());
+            userToEdit.setEnabled(userFromDB.isEnabled());
         }
         userRepository.save(userToEdit);
     }
@@ -125,6 +126,17 @@ public class UserService { //implements UserDetailsService {
     public void unBlock(User user) {
         user.setEnabled(true);
         edit(user);
+    }
+
+    public String setRedirectUrlToShowListUsersByRole(Long userId){
+        String redirectUrlDependsOfRole = "";
+        if (findById(userId).hasRole(RoleName.ROLE_USER.name())) {
+            redirectUrlDependsOfRole="/admin/users/all";
+        }
+        else if (findById(userId).hasRole(RoleName.ROLE_ADMIN.name())){
+            redirectUrlDependsOfRole="/admin/admins/all";
+        }
+        return redirectUrlDependsOfRole;
     }
 
     @Transactional
