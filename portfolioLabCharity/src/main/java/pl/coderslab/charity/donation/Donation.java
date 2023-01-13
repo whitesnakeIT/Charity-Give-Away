@@ -33,7 +33,7 @@ public class Donation {
     @Max(10)
     private Integer quantity;
 
-    @NotNull
+    @NotEmpty
     @ManyToMany
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(
@@ -70,7 +70,6 @@ public class Donation {
     private LocalDate pickUpDate;
     @NotNull
     @DateTimeFormat(pattern = "HH:mm")
-    @Future
     private LocalTime pickUpTime;
 
     @Size(max = 150)

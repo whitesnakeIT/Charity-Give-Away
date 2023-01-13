@@ -10,11 +10,18 @@ import pl.coderslab.charity.institution.InstitutionService;
 
 @Controller
 @RequiredArgsConstructor
-public class HomeController {
+public class HomeController {//extends FirstController {
 
     private final InstitutionService institutionService;
     private final DonationService donationService;
 
+//    public HomeController(InstitutionService institutionService, DonationService donationService)
+//    {
+//        super();
+//        this.institutionService = institutionService;
+//                this.donationService = donationService;
+////        super(institutionService,donationService);
+//    }
 
     @RequestMapping("/")
     public String homeAction(Model model) {
@@ -25,4 +32,6 @@ public class HomeController {
 
         return "index";
     }
+
+
 }
