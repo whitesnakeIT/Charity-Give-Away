@@ -39,7 +39,7 @@ public class User {
 
     @NotEmpty
     @NotBlank
-    @Size(min = 2,max = 70)
+    @Size(min = 7,max = 70)
     private String password;
 
     private boolean enabled;
